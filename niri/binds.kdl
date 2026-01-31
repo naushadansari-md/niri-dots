@@ -1,0 +1,158 @@
+// ────────────── Keybindings ──────────────
+
+binds {
+
+     // Shortcuts Panel
+     MOD+SHIFT+ESCAPE            { show-hotkey-overlay; }
+ 
+    // Application Shortcuts
+     MOD+Return                  { spawn "alacritty"; }
+     MOD+B                       { spawn "google-chrome-stable"; }
+     MOD+G                       { spawn "geany"; }
+     MOD+E                       { spawn "cosmic-files"; }
+     MOD+A                       { spawn "rofi" "-show" "drun"; }
+     MOD+D                       { spawn "fuzzel"; }
+     MOD+N                       {spawn  "~/.config/niri/scripts/rofi-network-power.sh";}
+     MOD+SHIFT+W                 { spawn "~/.config/niri/scripts/swww.sh"; }
+
+    // Brightness
+    XF86MonBrightnessUp          { spawn "~/.config/niri/scripts/osd.sh" "brightness_up"; } 
+    XF86MonBrightnessDown        { spawn "~/.config/niri/scripts/osd.sh" "brightness_down"; } 
+    
+    // Volume
+    XF86AudioRaiseVolume         { spawn "~/.config/niri/scripts/osd.sh" "volume_up"; } 
+    XF86AudioLowerVolume         { spawn "~/.config/niri/scripts/osd.sh" "volume_down"; } 
+    XF86AudioMute                { spawn "~/.config/niri/scripts/osd.sh" "volume_mute"; } 
+    
+    XF86AudioMicMute       allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    
+    // Media
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    // Window Management
+    MOD+Q                               { close-window; }
+
+    MOD+H                               { focus-column-left; }
+    MOD+J                               { focus-workspace-down; }
+    MOD+K                               { focus-workspace-up; }
+    MOD+L                               { focus-column-right; }
+
+    MOD+LEFT                            { focus-column-left; }
+    MOD+DOWN                            { focus-window-down; }
+    MOD+UP                              { focus-window-up; }
+    MOD+RIGHT                           { focus-column-right; }
+
+    // Move windows within workspace
+    MOD+SHIFT+LEFT                      { move-column-left; }
+    MOD+SHIFT+DOWN                      { move-window-down; }
+    MOD+SHIFT+UP                        { move-window-up; }
+    MOD+SHIFT+RIGHT                     { move-column-right; }
+
+    MOD+SHIFT+H                         { move-column-left; }
+    MOD+SHIFT+J                         { move-column-to-workspace-down; }
+    MOD+SHIFT+K                         { move-column-to-workspace-up; }
+    //MOD+SHIFT+L                         { move-column-right; }
+
+    // Move to workspace edges
+    MOD+SHIFT+HOME                      { move-column-to-first; }
+    MOD+SHIFT+END                       { move-column-to-last; }
+
+    MOD+HOME                            { focus-column-first; }
+    MOD+END                             { focus-column-last; }
+
+    // Monitor Management - Move between monitors
+    MOD+CTRL+LEFT                       { focus-monitor-left; }
+    MOD+CTRL+RIGHT                      { focus-monitor-right; }
+    MOD+CTRL+UP                         { focus-monitor-up; }
+    MOD+CTRL+DOWN                       { focus-monitor-down; }
+
+    MOD+CTRL+H                          { focus-monitor-left; }
+    MOD+CTRL+L                          { focus-monitor-right; }
+    MOD+CTRL+K                          { focus-monitor-up; }
+    MOD+CTRL+J                          { focus-monitor-down; }
+
+    // Move windows to different monitors
+    MOD+SHIFT+CTRL+LEFT                  { move-column-to-monitor-left; }
+    MOD+SHIFT+CTRL+RIGHT                 { move-column-to-monitor-right; }
+    MOD+SHIFT+CTRL+UP                    { move-column-to-monitor-up; }
+    MOD+SHIFT+CTRL+DOWN                  { move-column-to-monitor-down; }
+
+    MOD+SHIFT+CTRL+H                     { move-column-to-monitor-left; }
+    MOD+SHIFT+CTRL+L                     { move-column-to-monitor-right; }
+    MOD+SHIFT+CTRL+K                     { move-column-to-monitor-up; }
+    MOD+SHIFT+CTRL+J                     { move-column-to-monitor-down; }
+
+    // Workspace Management
+    MOD+ESCAPE                          hotkey-overlay-title="Open Overview" repeat=false { toggle-overview; }
+    MOD+WHEELSCROLLDOWN                 cooldown-ms=100 { focus-workspace-down; }
+    MOD+WHEELSCROLLUP                   cooldown-ms=100 { focus-workspace-up; }
+
+    // Move windows to different workspaces - using wheel matches K/J pattern
+    MOD+SHIFT+WHEELSCROLLDOWN           cooldown-ms=100 { move-column-to-workspace-down; }
+    MOD+SHIFT+WHEELSCROLLUP             cooldown-ms=100 { move-column-to-workspace-up; }
+
+    // Column navigation with mouse
+    MOD+WHEELSCROLLRIGHT                  { focus-column-right; }
+    MOD+WHEELSCROLLLEFT                   { focus-column-left; }
+    MOD+CTRL+WHEELSCROLLRIGHT             { move-column-right; }
+    MOD+CTRL+WHEELSCROLLLEFT              { move-column-left; }
+
+    // Numbered Workspaces
+    MOD+1                               { focus-workspace 1; }
+    MOD+2                               { focus-workspace 2; }
+    MOD+3                               { focus-workspace 3; }
+    MOD+4                               { focus-workspace 4; }
+    MOD+5                               { focus-workspace 5; }
+    MOD+6                               { focus-workspace 6; }
+    MOD+7                               { focus-workspace 7; }
+    MOD+8                               { focus-workspace 8; }
+    MOD+9                               { focus-workspace 9; }
+
+    // Move windows to numbered workspaces with MOD+SHIFT
+    MOD+SHIFT+1                         { move-column-to-workspace 1; }
+    MOD+SHIFT+2                         { move-column-to-workspace 2; }
+    MOD+SHIFT+3                         { move-column-to-workspace 3; }
+    MOD+SHIFT+4                         { move-column-to-workspace 4; }
+    MOD+SHIFT+5                         { move-column-to-workspace 5; }
+    MOD+SHIFT+6                         { move-column-to-workspace 6; }
+    MOD+SHIFT+7                         { move-column-to-workspace 7; }
+    MOD+SHIFT+8                         { move-column-to-workspace 8; }
+    MOD+SHIFT+9                         { move-column-to-workspace 9; }
+
+
+
+    // Layout Controls
+    Mod+R                               { switch-preset-column-width; }
+    Mod+Shift+R                         { switch-preset-column-width-back; }
+    MOD+C                               { center-column; }
+    MOD+CTRL+C                          { center-visible-columns; }
+    MOD+BRACKETLEFT                     { consume-or-expel-window-left; }
+    MOD+BRACKETRIGHT                    { consume-or-expel-window-right; }
+    MOD+SHIFT+BRACKETLEFT               { set-window-height "-10%"; }
+    MOD+SHIFT+BRACKETRIGHT              { set-window-height "+10%"; }
+
+    // Window resizing with mouse
+    MOD+CTRL+WHEELSCROLLDOWN            { set-window-height "-5%"; }
+    MOD+CTRL+WHEELSCROLLUP              { set-window-height "+5%"; }
+
+    // Window Modes
+    MOD+T                               { toggle-window-floating; }
+    MOD+F                               { maximize-column; }
+    MOD+M                               { maximize-column; }
+    Mod+V                               { toggle-window-floating; }
+    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; }
+    MOD+W                            { toggle-column-tabbed-display; }
+
+    // Utils
+    Mod+Shift+E                         { quit; }
+    Ctrl+Alt+Delete                     { quit; }
+    Mod+Shift+P                         { power-off-monitors; }
+    Mod+Shift+L                         hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    MOD+S                               { screenshot; }
+    MOD+SHIFT+S                         { screenshot-screen write-to-disk=true; }
+    MOD+CTRL+S                          { screenshot-window write-to-disk=true; }
+    
+}

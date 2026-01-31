@@ -1,0 +1,12 @@
+#tray {
+  padding: 0 6px;
+}
+
+#tray > .passive {
+  opacity: 0.6;
+}
+
+#tray > .needs-attention {
+  background-color: alpha(@color2, 0.25);
+  border-radius: 8px;
+}

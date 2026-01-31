@@ -1,0 +1,9 @@
+#custom-launcher {
+  font-size: 16px;
+  color: @color1;
+  padding: 0 6px;
+}
+
+#custom-launcher:hover {
+  color: @foreground;
+}

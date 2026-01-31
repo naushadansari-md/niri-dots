@@ -1,0 +1,7 @@
+#custom-notificationmode {
+  color: @foreground;
+}
+
+#custom-notificationmode.dnd {
+  color: alpha(@foreground, 0.5);
+}

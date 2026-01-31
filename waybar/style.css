@@ -1,0 +1,231 @@
+/* ------------------------------
+   IMPORTS
+--------------------------------*/
+@import '/home/saad/.cache/wal/colors-waybar.css';
+@import '/home/saad/.config/waybar/style/clock.css';
+@import '/home/saad/.config/waybar/style/hardware.css';
+@import '/home/saad/.config/waybar/style/launcher.css';
+@import '/home/saad/.config/waybar/style/pulseaudio.css';
+@import '/home/saad/.config/waybar/style/tray.css';
+@import '/home/saad/.config/waybar/style/workspaces.css';
+@import '/home/saad/.config/waybar/style/power.css';
+@import '/home/saad/.config/waybar/style/backlight.css';
+@import '/home/saad/.config/waybar/style/notificationmode.css';
+
+/* ------------------------------
+   GLOBAL RESET (GTK SAFE)
+--------------------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  transition: background-color 150ms ease,
+              color 150ms ease,
+              box-shadow 150ms ease,
+              border-color 150ms ease;
+}
+
+/* ------------------------------
+   WAYBAR BASE
+--------------------------------*/
+#waybar {
+  font-family: JetBrainsMono Nerd Font, JetBrainsMono, monospace;
+  font-weight: bold;
+  font-size: 14px;
+  color: @foreground;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  min-height: 30px;
+}
+
+/* optional subtle shadow under the whole bar */
+window#waybar {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------
+   GROUP CONTAINERS (NO SHARED BOX)
+--------------------------------*/
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/* spacing between groups */
+.modules-left   { margin-left: 8px; }
+.modules-center { margin: 0 8px; }
+.modules-right  { margin-right: 8px; }
+
+/* small spacing between modules (fallback) */
+.modules-left > widget,
+.modules-center > widget,
+.modules-right > widget,
+.modules-left > box,
+.modules-center > box,
+.modules-right > box {
+  margin: 0 4px;
+}
+
+/* keep edges tight */
+.modules-left > widget:first-child,
+.modules-center > widget:first-child,
+.modules-right > widget:first-child,
+.modules-left > box:first-child,
+.modules-center > box:first-child,
+.modules-right > box:first-child {
+  margin-left: 0;
+}
+.modules-left > widget:last-child,
+.modules-center > widget:last-child,
+.modules-right > widget:last-child,
+.modules-left > box:last-child,
+.modules-center > box:last-child,
+.modules-right > box:last-child {
+  margin-right: 0;
+}
+
+/* ------------------------------
+   BASE PILL STYLE (shared)
+--------------------------------*/
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#backlight,
+#battery,
+#tray,
+#pulseaudio,
+#custom-launcher,
+#custom-power,
+#custom-notificationmode,
+#keyboard-state {
+  padding: 3px 12px;
+  margin: 0 4px;
+  background-color: alpha(@background, 0.92);
+  border: 1px solid alpha(@color1, 0.65);
+  border-radius: 12px;
+  color: @foreground;
+}
+
+/* active glow (if module has .active) */
+.module.active {
+  box-shadow: 0 0 10px alpha(@color1, 0.25);
+}
+
+/* ------------------------------
+   NIRI WORKSPACES (MATCH OTHER MODULES)
+   Supports both ids: #workspaces / #niri-workspaces
+--------------------------------*/
+#workspaces,
+#niri-workspaces {
+  padding: 3px 12px;
+  margin: 0 4px;
+  background-color: alpha(@background, 0.92);
+  border: 1px solid alpha(@color1, 0.65);
+  border-radius: 12px;
+  color: @foreground;
+  min-height: 0;
+}
+
+/* buttons base */
+#workspaces button,
+#niri-workspaces button {
+  all: unset;
+  padding: 0 10px;
+  margin: 0 4px;
+  border-radius: 10px;
+
+  /* improved colors */
+  background-color: alpha(@foreground, 0.06);
+  border: 1px solid transparent;
+  color: alpha(@foreground, 0.75);
+
+  transition: all 160ms ease;
+  min-height: 0;
+}
+
+/* hover */
+#workspaces button:hover,
+#niri-workspaces button:hover {
+  background-color: alpha(@color1, 0.18);
+  color: @foreground;
+  box-shadow: 0 2px 10px alpha(@color1, 0.18);
+}
+
+/* active workspace */
+#workspaces button.active,
+#niri-workspaces button.active {
+  background-color: alpha(@color1, 0.30);
+  color: @foreground;
+  border: 1px solid alpha(@color1, 0.55);
+  box-shadow: 0 0 12px alpha(@color1, 0.35);
+}
+
+/* urgent workspace */
+#workspaces button.urgent,
+#niri-workspaces button.urgent {
+  background-color: alpha(@color2, 0.35);
+  color: @background;
+  border: 1px solid alpha(@color2, 0.7);
+  box-shadow: 0 0 12px alpha(@color2, 0.4);
+}
+
+/* ------------------------------
+   HOVER EFFECTS (PILLS)
+--------------------------------*/
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#network:hover,
+#backlight:hover,
+#battery:hover,
+#tray:hover,
+#pulseaudio:hover,
+#custom-launcher:hover,
+#custom-power:hover,
+#custom-notificationmode:hover,
+#keyboard-state:hover {
+  background-color: alpha(@color1, 0.18);
+  box-shadow: 0 2px 12px alpha(@color1, 0.20);
+}
+
+/* ------------------------------
+   TRAY ICON SPACING
+--------------------------------*/
+#tray > widget {
+  margin: 0 3px;
+}
+
+/* ------------------------------
+   TOOLTIP
+--------------------------------*/
+tooltip {
+  padding: 10px;
+  background-color: @background;
+  border-radius: 10px;
+  border: 1px solid alpha(@color1, 0.75);
+  color: @foreground;
+}
+
+tooltip label {
+  font-weight: bold;
+  color: @foreground;
+}
+
+/* ------------------------------
+   OPTIONAL: CLEAN SPACE MODULE
+--------------------------------*/
+#custom-space {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}

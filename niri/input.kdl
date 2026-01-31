@@ -1,0 +1,61 @@
+// ────────────── Input Configuration ──────────────
+
+input {
+    // focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="0%"
+    workspace-auto-back-and-forth
+
+touchpad {
+        tap
+        dwt
+        drag false
+        natural-scroll
+        accel-speed 0.4
+        accel-profile "adaptive"
+        scroll-method "two-finger"
+        click-method "clickfinger"
+    }
+
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+    hide-when-typing
+    hide-after-inactive-ms 10000
+}
+
+overview {
+    backdrop-color "#282828cc"   // bg0 + alpha
+    
+    workspace-shadow {
+        off
+    }
+}
+
+
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 30
+        delay-ms 100
+        max-speed 1500
+    }
+
+    dnd-edge-workspace-switch {
+        trigger-height 50
+        delay-ms 100
+        max-speed 1500
+    }
+
+    hot-corners {
+        off
+        top-left
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
+}

@@ -1,0 +1,8 @@
+// ────────────── General Settings ──────────────
+ prefer-no-csd
+ screenshot-path "~/Pictures/screenshots/screenshot_from_%Y-%m-%d %H-%M-%S.png"
+ output "eDP-1" {
+    mode "1920x1080@60.024"
+    scale 1
+    
+}

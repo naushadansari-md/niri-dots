@@ -1,0 +1,5 @@
+#clock {
+  color: @foreground;
+  font-weight: bold;
+ 
+}

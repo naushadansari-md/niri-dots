@@ -1,0 +1,22 @@
+#custom-power,
+#custom-lock,
+#custom-exit,
+#custom-reboot {
+  padding: 0 6px;
+  border-radius: 10px;
+  color: @foreground;
+}
+
+/* make the power icon pop a bit */
+#custom-power {
+  color: @color1;
+}
+
+/* subtle hover */
+#custom-power:hover,
+#custom-lock:hover,
+#custom-exit:hover,
+#custom-reboot:hover {
+  background-color: alpha(@color1, 0.18);
+  box-shadow: 0 0 8px alpha(@color1, 0.20);
+}
