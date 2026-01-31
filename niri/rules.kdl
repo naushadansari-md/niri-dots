@@ -32,12 +32,12 @@ window-rule {
     max-height 1000
 }
 
-// window-rule {
-//  match title=r#".*File.*"#
-//  open-floating false
-//  default-column-width { proportion 0.0; }
+window-rule {
+    match title=r#".*File.*"#
+    open-floating false
+    // default-column-width { proportion 0.0; }
  
- // }
+  }
 
 window-rule {
     match app-id=r#"org\.gtk\.FileChooserDialog"#
