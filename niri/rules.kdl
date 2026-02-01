@@ -18,6 +18,7 @@ window-rule {
 window-rule {
     match app-id=r#"firefox"#
     match app-id=r#"google-chrome"#
+    match app-id=r#"org.mozilla.Thunderbird"#
     match app-id=r#"Papers"#
     open-maximized true
 }
