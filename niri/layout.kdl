@@ -16,21 +16,21 @@ default-column-width   { proportion 0.5; }
 
 focus-ring {
         width 1
-active-color "#5B5C9D"
+active-color "#9AAAA4"
 // inactive-color "#958379"
-active-gradient from="#5B5C9D" to="#B36897" angle=45 relative-to="workspace-view" in="oklch longer hue"
-inactive-gradient from="#a68a88" to="#09040d" angle=45 relative-to="workspace-view" in="oklch longer hue"
+active-gradient from="#9AAAA4" to="#B8C3BB" angle=45 relative-to="workspace-view" in="oklch longer hue"
+inactive-gradient from="#9c9d99" to="#131518" angle=45 relative-to="workspace-view" in="oklch longer hue"
         
 }
 
 
 border {
         width 1
-active-color "#5B5C9D"
+active-color "#9AAAA4"
 // inactive-color "#958379"
-active-gradient from="#5B5C9D" to="#B36897" angle=45 relative-to="workspace-view" in="oklch longer hue"
-inactive-gradient from="#a68a88" to="#09040d" angle=45 relative-to="workspace-view" in="oklch longer hue"
-urgent-color "#F78F75"
+active-gradient from="#9AAAA4" to="#B8C3BB" angle=45 relative-to="workspace-view" in="oklch longer hue"
+inactive-gradient from="#9c9d99" to="#131518" angle=45 relative-to="workspace-view" in="oklch longer hue"
+urgent-color "#657D82"
 
 }
 
