@@ -7,13 +7,20 @@ input {
 
 touchpad {
         tap
-        dwt
-        drag false
+        // dwt
+        // drag false
         natural-scroll
-        accel-speed 0.4
-        accel-profile "adaptive"
-        scroll-method "two-finger"
-        click-method "clickfinger"
+        // accel-speed 0.4
+        // accel-profile "adaptive"
+        // scroll-method "two-finger"
+        //  click-method "clickfinger"
+    }
+    
+    
+    mouse {
+        // natural-scroll
+        // accel-speed 0.2
+        accel-profile "flat"
     }
 
 }
