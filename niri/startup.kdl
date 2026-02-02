@@ -3,7 +3,7 @@
  spawn-at-startup              "swww-daemon"
  spawn-at-startup              "mako"
  spawn-at-startup              "xwayland-satellite"
- spawn-at-startup              "/usr/lib/xdg-desktop-portal-gnome"
+ spawn-at-startup              "/usr/lib/xdg-desktop-portal-cosmic"
  spawn-at-startup              "blueman-applet"
  // spawn-sh-at-startup        "wl-paste --watch cliphist store"
  spawn-at-startup              "/usr/bin/set_wallpaper.sh" "/home/saad/.cache/wal/wal"
