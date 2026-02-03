@@ -15,10 +15,9 @@
  spawn-at-startup              "~/.config/niri/scripts/idle.sh"
 
 
- spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "Adwaita"
+ spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "adw-gtk3-dark"
  spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "icon-theme" "Cosmic"
  spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-theme" "Pop"
  spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "text-scaling-factor" "1"
  spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-size" "24"
-
  spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark"
