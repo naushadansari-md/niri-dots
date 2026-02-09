@@ -20,6 +20,7 @@ window-rule {
     match app-id=r#"google-chrome"#
     match app-id=r#"org.mozilla.Thunderbird"#
     match app-id=r#"Papers"#
+    match app-id=r#"zathura"#
     open-maximized true
 }
 

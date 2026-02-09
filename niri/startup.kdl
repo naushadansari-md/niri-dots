@@ -5,14 +5,12 @@
  spawn-at-startup              "xwayland-satellite"
  spawn-at-startup              "/usr/lib/xdg-desktop-portal-cosmic"
  spawn-at-startup              "blueman-applet"
- // spawn-sh-at-startup        "wl-paste --watch cliphist store"
  spawn-at-startup              "/usr/bin/set_wallpaper.sh" "/home/saad/.cache/wal/wal"
  spawn-at-startup              "waybar"
  spawn-at-startup              "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
  spawn-at-startup              "~/.config/niri/scripts/welcome.sh"
  spawn-at-startup              "~/.config/niri/scripts/battery-monitor.sh"
- // spawn-at-startup           "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
- spawn-at-startup              "~/.config/niri/scripts/idle.sh"
+ spawn-at-startup              "~/.config/niri/scripts/swayidle-power.sh"
 
 
  spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "adw-gtk3-dark"

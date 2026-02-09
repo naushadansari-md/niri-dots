@@ -15,7 +15,9 @@ layout {
 default-column-width   { proportion 0.5; }
 
 focus-ring {
-        width 1
+       // off
+        on
+        width 2
 active-color "#6491AD"
 // inactive-color "#958379"
 active-gradient from="#6491AD" to="#79AAC1" angle=45 relative-to="workspace-view" in="oklch longer hue"
@@ -25,7 +27,10 @@ inactive-gradient from="#a59d89" to="#161714" angle=45 relative-to="workspace-vi
 
 
 border {
-        width 1
+        
+        off
+        // on
+        width 2
 active-color "#6491AD"
 // inactive-color "#958379"
 active-gradient from="#6491AD" to="#79AAC1" angle=45 relative-to="workspace-view" in="oklch longer hue"
@@ -36,12 +41,13 @@ urgent-color "#A58D71"
 
  
 shadow {
-       on
-       draw-behind-window false
+       off
+       // on
+       draw-behind-window true
        softness 30
        spread 5
        offset x=0 y=5
-       color "#0007"
+       color "#00000070"
 }
 
 struts {
